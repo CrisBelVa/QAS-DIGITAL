@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QAS-Digital | Evolução Estratégica do seu Sistema de Gestão Integrado</title>
+  <meta name="description"
+    content="QAS-Digital unifica Qualidade, Ambiente e Segurança numa plataforma única e intuitiva. Substituímos o caos das planilhas por automação em tempo real." />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+  <script src="js/i18n.js"></script>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%2300D4B1'/><text x='20' y='28' text-anchor='middle' font-size='20' font-weight='800' fill='%230B1120' font-family='sans-serif'>Q</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ICONS (reusable SVG symbols) -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+      <line x1="2" y1="20" x2="22" y2="20" />
+    </symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </symbol>
+    <symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M17 8C8 10 5.9 16.17 3.82 19.5A10 10 0 0 0 14 21C18.5 21 22 17.5 22 13C22 7 17 8 17 8Z" />
+      <path d="M3.82 19.5a10 10 0 0 1 10.18 1.5" />
+    </symbol>
+    <symbol id="ic-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="8" r="6" />
+      <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+    </symbol>
+    <symbol id="ic-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <rect x="9" y="9" width="6" height="6" />
+      <line x1="9" y1="1" x2="9" y2="4" />
+      <line x1="15" y1="1" x2="15" y2="4" />
+      <line x1="9" y1="20" x2="9" y2="23" />
+      <line x1="15" y1="20" x2="15" y2="23" />
+      <line x1="20" y1="9" x2="23" y2="9" />
+      <line x1="20" y1="14" x2="23" y2="14" />
+      <line x1="1" y1="9" x2="4" y2="9" />
+      <line x1="1" y1="14" x2="4" y2="14" />
+    </symbol>
+    <symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+    </symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </symbol>
+    <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
+    </symbol>
+    <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </symbol>
+    <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </symbol>
+    <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </symbol>
+    <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+      <path d="M4 22h16" />
+      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+    </symbol>
+    <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="12" y1="1" x2="12" y2="23" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </symbol>
+    <symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+    </symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </symbol>
+    <symbol id="ic-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z" />
+      <line x1="12" y1="9" x2="12" y2="13" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
+    </symbol>
+    <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polygon
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+      <path d="M12 18h.01" />
+    </symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="5 3 19 12 5 21 5 3" />
+    </symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </symbol>
+    <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12" />
+    </symbol>
+    <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </symbol>
+    <symbol id="ic-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+    </symbol>
+  </svg>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <div class="nav-logo-icon">Q</div>
+          QAS<span>-Digital</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#problem">Problema</a></li>
+          <li><a href="#solution">Solução</a></li>
+          <li><a href="#modules">Módulos</a></li>
+          <li><a href="#pricing">Preços</a></li>
+          <li><a href="#traction">Roadmap</a></li>
+        </ul>
+        <div class="nav-cta">
+          <div class="lang-switch">
+            <a href="#" data-lang="pt" class="lang-active">PT</a>
+            <span class="lang-sep">|</span>
+            <a href="#" data-lang="en">EN</a>
+          </div>
+          <a href="#cta" class="btn btn-ghost">Contacto</a>
+          <a href="#cta" class="btn btn-primary">Agendar Demo</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">&#x2715;</span>
+    <a href="#problem" class="mobile-link">Problema</a>
+    <a href="#solution" class="mobile-link">Solução</a>
+    <a href="#modules" class="mobile-link">Módulos</a>
+    <a href="#pricing" class="mobile-link">Preços</a>
+    <a href="#traction" class="mobile-link">Roadmap</a>
+    <a href="#cta" class="btn btn-primary">Agendar Demo</a>
+    <div class="lang-switch" style="margin-top:8px">
+      <a href="#" data-lang="pt" class="lang-active">PT</a><span class="lang-sep">|</span><a href="#"
+        data-lang="en">EN</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-badge"><span class="dot"></span> Plataforma em piloto com 12 organizações ativas</div>
+        <h1 class="hero-title">Evolução Estratégica<br />do seu <span class="gradient-text">Sistema de<br />Gestão
+            Integrado</span></h1>
+        <p class="hero-sub">A QAS-Digital unifica Qualidade, Ambiente e Segurança numa plataforma única e intuitiva.
+          Substituímos o caos das planilhas por automação em tempo real, transformando conformidade em dados para
+          decisões estratégicas.</p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary">
+            <svg width="14" height="14">
+              <use href="#ic-play" />
+            </svg> <span class="i18n-btn">Agendar Demo Gratuita</span>
+          </a>
+          <a href="#solution" class="btn btn-ghost">Conhecer a Plataforma</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num counter" data-target="12">0</div>
+            <div class="hero-stat-label">Organizações em piloto</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Módulos ISO completos</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <div class="hero-stat-num">85%+</div>
+            <div class="hero-stat-label">Gross Margin</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <div class="hero-stat-num">2026</div>
+            <div class="hero-stat-label">Janela CSRD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal-right">
+      <div class="dashboard-card">
+        <div class="db-header">
+          <div class="db-title" style="display:flex;align-items:center;gap:6px">
+            <svg width="16" height="16">
+              <use href="#ic-chart" />
+            </svg> Dashboard QAS
+          </div>
+          <div class="db-badge" style="display:flex;align-items:center;gap:4px"><span class="dot"
+              style="width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block;animation:pulse 2s infinite"></span>
+            Live</div>
+        </div>
+        <div class="db-modules">
+          <div class="db-module">
+            <div class="db-module-icon"><svg width="18" height="18">
+                <use href="#ic-award" />
+              </svg></div>
+            <div class="db-module-name">ISO 9001</div>
+            <div class="db-module-status">Qualidade</div>
+          </div>
+          <div class="db-module">
+            <div class="db-module-icon"><svg width="18" height="18">
+                <use href="#ic-leaf" />
+              </svg></div>
+            <div class="db-module-name">ISO 14001</div>
+            <div class="db-module-status">Ambiente</div>
+          </div>
+          <div class="db-module">
+            <div class="db-module-icon"><svg width="18" height="18">
+                <use href="#ic-shield" />
+              </svg></div>
+            <div class="db-module-name">ISO 45001</div>
+            <div class="db-module-status">Segurança</div>
+          </div>
+        </div>
+        <div class="db-chart">
+          <div class="db-bar" style="height:45%"></div>
+          <div class="db-bar" style="height:62%"></div>
+          <div class="db-bar" style="height:38%"></div>
+          <div class="db-bar" style="height:78%"></div>
+          <div class="db-bar" style="height:55%"></div>
+          <div class="db-bar" style="height:91%"></div>
+        </div>
+        <div class="db-kpi-row">
+          <div class="db-kpi">
+            <div class="db-kpi-val">98.2%</div>
+            <div class="db-kpi-label">Conformidade</div>
+          </div>
+          <div class="db-kpi">
+            <div class="db-kpi-val">4h</div>
+            <div class="db-kpi-label">Prep. auditoria</div>
+          </div>
+          <div class="db-kpi">
+            <div class="db-kpi-val">0</div>
+            <div class="db-kpi-label">Não-conformidades</div>
+          </div>
+          <div class="db-kpi" style="display:flex;align-items:center;gap:6px;justify-content:center">
+            <svg width="16" height="16" style="color:var(--teal)">
+              <use href="#ic-cpu" />
+            </svg>
+            <div>
+              <div class="db-kpi-val">IA</div>
+              <div class="db-kpi-label">Ativo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO STRIP -->
+  <section id="logos" style="padding: 40px 0 60px; background: var(--navy); border-bottom: 1px solid var(--border);">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 32px;"><span class="i18n-trusted">A QAS-Digital é
+          a plataforma de confiança das organizações de topo:</span></p>
+      <div
+        style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 48px; opacity: 0.6; filter: grayscale(100%);">
+        <div
+          style="font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; letter-spacing: 0.05em; color: var(--white);">
+          CORE<span style="font-weight: 400; font-size: 0.8rem; margin-left: 6px; letter-spacing: 0.15em;">SPACES</span>
+        </div>
+        <div
+          style="font-family: var(--font-head); font-weight: 700; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; color: var(--white);">
+          <svg width="22" height="22" style="margin-top: -2px;">
+            <use href="#ic-box" />
+          </svg> ASSET</div>
+        <div
+          style="font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; color: var(--white); line-height: 1;">
+          <span style="color: var(--muted); font-weight: 400; margin-right: 4px;">CQ</span> CAMPUS<br><span
+            style="font-size: 0.65rem; letter-spacing: 0.25em; font-weight: 500; display: block; margin-top: 2px;">ADVANTAGE</span>
+        </div>
+        <div
+          style="font-family: var(--font-body); font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; color: var(--white);">
+          <svg width="28" height="28" style="margin-top:-2px">
+            <use href="#ic-leaf" />
+          </svg> COASTAL RIDGE</div>
+        <div
+          style="font-family: var(--font-head); font-weight: 800; font-size: 1.8rem; letter-spacing: -0.05em; color: var(--white);">
+          CBRE</div>
+        <div
+          style="font-family: var(--font-body); font-weight: 700; font-size: 1.3rem; letter-spacing: 0.08em; color: var(--white);">
+          NEWMARK</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label"><svg>
+            <use href="#ic-alert" />
+          </svg> <span class="i18n-label">O Problema</span></div>
+        <h2 class="section-title">Hoje, muitas organizações<br />enfrentam um <span>caos operacional</span></h2>
+        <p class="section-desc">A sua equipa deveria focar-se na melhoria contínua, não na burocracia. Os dados QAS
+          fragmentados em silos custam tempo, dinheiro e reputação.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card red reveal delay-1">
+          <div class="problem-icon red"><svg>
+              <use href="#ic-folder" />
+            </svg></div>
+          <h3>Fragmentação de Informação</h3>
+          <p>Dados de Qualidade, Ambiente e Segurança em "silos" — Excel, papel e sistemas isolados sem comunicação.
+            Impossível ter uma visão global.</p>
+        </div>
+        <div class="problem-card yellow reveal delay-2">
+          <div class="problem-icon yellow"><svg>
+              <use href="#ic-clock" />
+            </svg></div>
+          <h3>Auditorias que Param Tudo</h3>
+          <p>Preparação para auditorias leva semanas de "operação stop". Cada processo manual acumula erros e aumenta o
+            risco de não-conformidade.</p>
+        </div>
+        <div class="problem-card teal reveal delay-3">
+          <div class="problem-icon teal"><svg>
+              <use href="#ic-trend" />
+            </svg></div>
+          <h3>Decisão sempre Reativa</h3>
+          <p>Indicadores estratégicos olham apenas para o mês passado. Ausência de KPIs em tempo real impede a
+            antecipação de riscos críticos.</p>
+        </div>
+      </div>
+      <div class="csrd-banner reveal">
+        <div class="csrd-icon"><svg>
+            <use href="#ic-globe" />
+          </svg></div>
+        <div class="csrd-content">
+          <h4>O Gargalo de 2026 — Diretiva CSRD (UE 2022/2464)</h4>
+          <p>As empresas portuguesas estão a tentar responder a exigências de reporte de 2026 com ferramentas
+            insuficientes. Mesmo as PMEs que não reportam diretamente estão a ser pressionadas pelos seus clientes e
+            bancos. <strong style="color:var(--white)">Esta é a janela de oportunidade.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution">
+    <div class="container">
+      <div class="solution-grid">
+        <div class="reveal-left">
+          <div class="section-label"><svg>
+              <use href="#ic-star" />
+            </svg> <span class="i18n-label">A Solução</span></div>
+          <h2 class="section-title">Uma plataforma.<br /><span>Três sistemas.</span><br />Decisões em tempo real.</h2>
+          <p class="section-desc">Elimine retrabalho, reduza riscos e tenha visibilidade total dos seus indicadores em
+            tempo real — prevenindo não-conformidades, autuações e multas.</p>
+          <div class="solution-features" style="margin-top:40px">
+            <div class="solution-feature">
+              <div class="sf-icon"><svg>
+                  <use href="#ic-chart" />
+                </svg></div>
+              <div class="sf-text">
+                <h4>Dashboard centralizado em tempo real</h4>
+                <p>Métricas de Qualidade, Ambiente e Segurança numa única tela, atualizadas automaticamente para
+                  decisões informadas.</p>
+              </div>
+            </div>
+            <div class="solution-feature">
+              <div class="sf-icon"><svg>
+                  <use href="#ic-link" />
+                </svg></div>
+              <div class="sf-text">
+                <h4>KPIs integrados e interligados</h4>
+                <p>Todos os sistemas de gestão comunicam entre si, revelando correlações e melhorias globais antes
+                  impossíveis de detetar.</p>
+              </div>
+            </div>
+            <div class="solution-feature">
+              <div class="sf-icon"><svg>
+                  <use href="#ic-cpu" />
+                </svg></div>
+              <div class="sf-text">
+                <h4>Preparação de auditorias assistida por IA</h4>
+                <p>O único software no mercado PME que prepara automaticamente toda a documentação e identifica gaps
+                  antes da auditoria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="solution-visual reveal-right">
+          <div
+            style="padding:3px;background:linear-gradient(135deg,var(--teal) 0%,transparent 100%);border-radius:var(--radius-lg)">
+            <div style="background:var(--navy);border-radius:calc(var(--radius-lg) - 3px);padding:28px">
+              <div
+                style="font-family:var(--font-head);font-weight:700;font-size:0.9rem;margin-bottom:20px;color:var(--teal);display:flex;align-items:center;gap:8px">
+                <svg width="16" height="16" style="color:var(--teal)">
+                  <use href="#ic-cpu" />
+                </svg> <span class="ai-head">Assistente IA — Auditoria ISO 9001</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div
+                  style="background:var(--navy-light);border-radius:10px;padding:14px 16px;font-size:0.82rem;color:var(--muted);display:flex;align-items:center;gap:8px">
+                  <svg width="14" height="14" style="color:var(--teal);flex-shrink:0">
+                    <use href="#ic-search" />
+                  </svg>
+                  <span><strong style="color:var(--white)">Analisando</strong> 247 documentos...</span>
+                </div>
+                <div
+                  style="background:rgba(0,212,177,0.08);border:1px solid rgba(0,212,177,0.2);border-radius:10px;padding:14px 16px;font-size:0.82rem">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <svg width="14" height="14" class="check">
+                      <use href="#ic-check" />
+                    </svg>
+                    <strong class="ai-c1-lbl">Cláusula 6.1</strong> — <span class="ai-c1-st"
+                      style="color:#4AF5D8">Conforme</span>
+                  </div>
+                  <span class="ai-c1-sub" style="color:var(--muted)">Gestão de riscos atualizada em Jan/26</span>
+                </div>
+                <div
+                  style="background:rgba(255,209,102,0.07);border:1px solid rgba(255,209,102,0.2);border-radius:10px;padding:14px 16px;font-size:0.82rem">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <svg width="14" height="14" class="partial">
+                      <use href="#ic-alert" />
+                    </svg>
+                    <strong class="ai-c2-lbl">Cláusula 9.3</strong> — <span class="ai-c2-st"
+                      style="color:var(--yellow)">Ação requerida</span>
+                  </div>
+                  <span class="ai-c2-sub" style="color:var(--muted)">Revisão de gestão em falta — 6 dias para
+                    prazo</span>
+                </div>
+                <div
+                  style="background:rgba(0,212,177,0.08);border:1px solid rgba(0,212,177,0.2);border-radius:10px;padding:14px 16px;font-size:0.82rem">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <svg width="14" height="14" class="check">
+                      <use href="#ic-check" />
+                    </svg>
+                    <strong class="ai-c3-lbl">Cláusula 10.2</strong> — <span class="ai-c3-st"
+                      style="color:#4AF5D8">Conforme</span>
+                  </div>
+                  <span class="ai-c3-sub" style="color:var(--muted)">2 não-conformidades encerradas este mês</span>
+                </div>
+                <div
+                  style="margin-top:8px;background:var(--teal);color:var(--navy);border-radius:8px;padding:12px 16px;font-size:0.82rem;font-weight:700;text-align:center;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">
+                  <svg width="14" height="14">
+                    <use href="#ic-download" />
+                  </svg> <span class="ai-btn">Gerar Relatório Completo de Auditoria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section id="modules">
+    <div class="container">
+      <div class="modules-header reveal">
+        <div class="section-label"><svg>
+            <use href="#ic-layers" />
+          </svg> <span class="i18n-label">Módulos</span></div>
+        <h2 class="section-title">Tudo integrado.<br /><span>Um só ecossistema.</span></h2>
+        <p class="section-desc">Cada módulo funciona de forma independente ou em conjunto, ligando os dados de
+          Qualidade, Ambiente e Segurança em tempo real.</p>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card reveal delay-1">
+          <div class="module-icon"><svg>
+              <use href="#ic-award" />
+            </svg></div>
+          <h3>ISO 9001 — Qualidade</h3>
+          <p>Gestão completa do sistema de qualidade: processos, não-conformidades, ações corretivas e indicadores de
+            desempenho.</p>
+          <span class="module-tag">Conformidade</span>
+        </div>
+        <div class="module-card reveal delay-2">
+          <div class="module-icon"><svg>
+              <use href="#ic-leaf" />
+            </svg></div>
+          <h3>ISO 14001 — Ambiente</h3>
+          <p>Controlo de aspetos e impactes ambientais, gestão de resíduos, licenças e acompanhamento regulatório
+            automatizado.</p>
+          <span class="module-tag">Sustentabilidade</span>
+        </div>
+        <div class="module-card reveal delay-3">
+          <div class="module-icon"><svg>
+              <use href="#ic-shield" />
+            </svg></div>
+          <h3>ISO 45001 — Segurança</h3>
+          <p>Gestão integrada de segurança e saúde no trabalho: riscos, acidentes, equipamentos e formações em dia.</p>
+          <span class="module-tag">SST</span>
+        </div>
+        <div class="module-card featured reveal delay-4">
+          <div class="module-badge">Exclusivo</div>
+          <div class="module-icon"><svg>
+              <use href="#ic-cpu" />
+            </svg></div>
+          <h3>Assistente IA para Auditorias</h3>
+          <p>Análise automática de documentação, identificação proativa de gaps e geração de relatórios — reduzindo
+            semanas a horas.</p>
+          <span class="module-tag">IA</span>
+        </div>
+        <div class="module-card reveal delay-5">
+          <div class="module-icon"><svg>
+              <use href="#ic-calendar" />
+            </svg></div>
+          <h3>Gestão Documental</h3>
+          <p>Repositório centralizado com controlo de versões, calendários de revisão e acesso baseado em perfis de
+            utilizador.</p>
+          <span class="module-tag">Documentação</span>
+        </div>
+        <div class="module-card reveal delay-1">
+          <div class="module-icon"><svg>
+              <use href="#ic-phone" />
+            </svg></div>
+          <h3>App Móvel <span style="color:var(--teal);font-size:0.75rem">(Q1 2026)</span></h3>
+          <p>Registo de ocorrências, inspeções e aprovações diretamente no campo — offline e em tempo real quando houver
+            ligação.</p>
+          <span class="module-tag">Mobile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section id="comparison">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label"><svg>
+            <use href="#ic-trophy" />
+          </svg> <span class="i18n-label">Comparativo</span></div>
+        <h2 class="section-title">Por que <span>QAS-Digital</span>?</h2>
+        <p class="section-desc">A única plataforma que combina as 3 normas ISO, arquitetura unificada e preparação de
+          auditorias com IA — a um preço acessível para PMEs.</p>
+      </div>
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width:35%">Funcionalidade</th>
+              <th>Manual / Excel</th>
+              <th>Sistemas Legados<br /><small style="font-weight:400;color:var(--muted)">(ex: Intelex)</small></th>
+              <th>Soluções Pontuais<br /><small style="font-weight:400;color:var(--muted)">(ISO única)</small></th>
+              <th class="highlight">QAS-Digital <svg width="14" height="14"
+                  style="display:inline;vertical-align:middle;color:var(--teal)">
+                  <use href="#ic-star" />
+                </svg></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-name">Abrange ISO 9001 + 14001 + 45001</td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Plataforma única e unificada</td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">UX intuitiva / formação mínima</td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Dashboards e KPIs em tempo real</td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Preparação de auditoria assistida por IA</td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Acompanhamento regulatório automatizado</td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="feature-name">Custo acessível para PMEs</td>
+              <td><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+              <td><svg width="18" height="18" class="cross">
+                  <use href="#ic-x" />
+                </svg></td>
+              <td><svg width="18" height="18" class="partial">
+                  <use href="#ic-minus" />
+                </svg></td>
+              <td class="highlight-col"><svg width="18" height="18" class="check">
+                  <use href="#ic-check" />
+                </svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note reveal">
+        <svg width="16" height="16" class="check" style="display:inline;vertical-align:middle">
+          <use href="#ic-check" />
+        </svg> <span class="comp-leg-yes">Sim</span> &nbsp;|&nbsp;
+        <svg width="16" height="16" class="partial" style="display:inline;vertical-align:middle">
+          <use href="#ic-minus" />
+        </svg> <span class="comp-leg-partial">Parcial</span> &nbsp;|&nbsp;
+        <svg width="16" height="16" class="cross" style="display:inline;vertical-align:middle">
+          <use href="#ic-x" />
+        </svg> <span class="comp-leg-no">Não disponível</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div class="pricing-header reveal">
+        <div class="section-label"><svg>
+            <use href="#ic-dollar" />
+          </svg> <span class="i18n-label">Preços</span></div>
+        <h2 class="section-title">Simples, transparente,<br /><span>acessível para PMEs.</span></h2>
+        <p class="section-desc">Sem surpresas. Comece com a implementação e escale conforme as suas necessidades.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal delay-1">
+          <div class="pricing-tier-label">Arranque</div>
+          <h3>Taxa de Implementação</h3>
+          <div class="pricing-price"><span class="currency">€</span><span class="amount">2.000</span></div>
+          <p class="pricing-desc">Pack base (40h) para configurar os fluxos automáticos iniciais. Pago uma única vez.
+          </p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Configuração completa de módulos</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Migração de dados existentes</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Formação inicial da equipa</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">40 horas de suporte dedicado</span></div>
+          </div>
+          <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center">Começar</a>
+        </div>
+        <div class="pricing-card popular reveal delay-2">
+          <div class="popular-badge"><svg width="12" height="12" style="display:inline;vertical-align:middle">
+              <use href="#ic-star" />
+            </svg> Mais Popular</div>
+          <div class="pricing-tier-label" style="margin-top:12px">Recorrente</div>
+          <h3>Assinatura Mensal</h3>
+          <div class="pricing-price"><span class="currency">€</span><span class="amount">299</span><span
+              class="period">/mês</span></div>
+          <p class="pricing-desc">Acesso completo à plataforma. Planos baseados no número de módulos ou utilizadores
+            ativos.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Todos os módulos ISO</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Dashboard em tempo real</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Assistente IA para auditorias</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Atualizações regulatórias automáticas</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Suporte técnico prioritário</span></div>
+          </div>
+          <a href="#cta" class="btn btn-primary" style="width:100%;justify-content:center">Agendar Demo</a>
+        </div>
+        <div class="pricing-card reveal delay-3">
+          <div class="pricing-tier-label">Enterprise</div>
+          <h3>Módulos Premium</h3>
+          <div class="pricing-price"><span class="amount" style="font-size:2rem">Custom</span></div>
+          <p class="pricing-desc">Funcionalidades avançadas para operações complexas com necessidades de integração
+            personalizadas.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Integração com sensores IoT</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">BI avançado e dashboards custom</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">Integração com ERP (SAP, Primavera)</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">SLA dedicado e gestor de conta</span></div>
+            <div class="pricing-feature"><svg width="15" height="15" class="feat-check">
+                <use href="#ic-check" />
+              </svg> <span class="pf">ISO 42001 (IA) em 2027</span></div>
+          </div>
+          <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center">Falar com Comercial</a>
+        </div>
+      </div>
+      <div class="unit-economics reveal">
+        <h4 class="ue-title" style="display:flex;align-items:center;gap:8px"><svg width="18" height="18"
+            style="color:var(--teal)">
+            <use href="#ic-trend" />
+          </svg> Unit Economics — Tier Professional</h4>
+        <div class="ue-grid">
+          <div class="ue-item">
+            <div class="ue-value">&lt;€1.200</div>
+            <div class="ue-label">CAC target (canal direto)</div>
+          </div>
+          <div class="ue-item">
+            <div class="ue-value">€5.588</div>
+            <div class="ue-label">ACV médio (Professional Tier)</div>
+          </div>
+          <div class="ue-item">
+            <div class="ue-value">€12.764+</div>
+            <div class="ue-label">LTV 3 anos (retenção 85%+)</div>
+          </div>
+          <div class="ue-item">
+            <div class="ue-value">85%+</div>
+            <div class="ue-label">Gross Margin (software-only)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACTION -->
+  <section id="traction">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label"><svg>
+            <use href="#ic-rocket" />
+          </svg> <span class="i18n-label">Tração &amp; Roadmap</span></div>
+        <h2 class="section-title">MVP live. Pilotos ativos.<br /><span>A escalar para 2027.</span></h2>
+      </div>
+      <div class="traction-grid">
+        <div>
+          <div class="traction-stats">
+            <div class="traction-stat reveal delay-1">
+              <div class="traction-stat-num">12</div>
+              <div class="traction-stat-label">Organizações em piloto ativo</div>
+            </div>
+            <div class="traction-stat reveal delay-2">
+              <div class="traction-stat-num">3</div>
+              <div class="traction-stat-label">Módulos ISO completos</div>
+            </div>
+            <div class="traction-stat reveal delay-3">
+              <div class="traction-stat-num">2</div>
+              <div class="traction-stat-label">MOUs com parceiros assinados</div>
+            </div>
+            <div class="traction-stat reveal delay-4">
+              <div class="traction-stat-num">SOC 2</div>
+              <div class="traction-stat-label">Type II audit iniciado</div>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap reveal-right">
+          <div class="roadmap-item active">
+            <div class="roadmap-dot">NOW</div>
+            <div class="roadmap-body">
+              <div class="roadmap-period">Estado Atual</div>
+              <h4>MVP live — pilotos ativos</h4>
+              <div class="roadmap-tags"><span class="roadmap-tag">12 pilotos</span><span class="roadmap-tag">3 módulos
+                  ISO</span><span class="roadmap-tag">SOC 2 em curso</span></div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-dot">Q1</div>
+            <div class="roadmap-body">
+              <div class="roadmap-period">Q1 2026</div>
+              <h4>Lançamento &amp; primeiros clientes pagantes</h4>
+              <div class="roadmap-tags"><span class="roadmap-tag">ISO 45001 GA</span><span class="roadmap-tag">App móvel
+                  beta</span><span class="roadmap-tag">10 clientes pagantes</span></div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-dot">Q2</div>
+            <div class="roadmap-body">
+              <div class="roadmap-period">Q2–Q3 2026</div>
+              <h4>Certificação e expansão europeia</h4>
+              <div class="roadmap-tags"><span class="roadmap-tag">SOC 2 certificado</span><span
+                  class="roadmap-tag">Entrada UE</span><span class="roadmap-tag">50+ clientes</span></div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-dot">Q4</div>
+            <div class="roadmap-body">
+              <div class="roadmap-period">Q4 2026</div>
+              <h4>IA em produção e canal de parceiros</h4>
+              <div class="roadmap-tags"><span class="roadmap-tag">200+ clientes</span><span class="roadmap-tag">AI audit
+                  assistant</span><span class="roadmap-tag">Channel program</span></div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-dot">27</div>
+            <div class="roadmap-body">
+              <div class="roadmap-period">2027</div>
+              <h4>Triple ARR — Series A ready</h4>
+              <div class="roadmap-tags"><span class="roadmap-tag">Triple ARR</span><span class="roadmap-tag">Series
+                  A</span><span class="roadmap-tag">ISO 42001 (IA)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Junte-se a nós na construção do <span class="gradient-text">padrão global</span> para gestão de conformidade
+          integrada.</h2>
+        <p>Agende uma demonstração gratuita e veja como a QAS-Digital transforma a sua gestão QAS em vantagem
+          competitiva — em menos de 30 minutos.</p>
+        <div class="cta-actions">
+          <a href="mailto:info@qas-digital.com" class="btn btn-primary">
+            <svg width="16" height="16">
+              <use href="#ic-mail" />
+            </svg> <span class="i18n-btn">Agendar Demo Gratuita</span>
+          </a>
+          <a href="mailto:info@qas-digital.com" class="btn btn-ghost">Falar com a Equipa</a>
+        </div>
+        <div class="cta-email"><span class="i18n-email">Ou contacte diretamente:</span> <a
+            href="mailto:info@qas-digital.com">info@qas-digital.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:0">
+            <div class="nav-logo-icon">Q</div>QAS<span style="color:var(--teal)">-Digital</span>
+          </div>
+          <p>Evolução estratégica do seu sistema de gestão integrado. Qualidade. Ambiente. Segurança.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Plataforma</h5>
+          <ul>
+            <li><a href="#solution">Solução</a></li>
+            <li><a href="#modules">Módulos</a></li>
+            <li><a href="#comparison">Comparativo</a></li>
+            <li><a href="#pricing">Preços</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#traction">Roadmap</a></li>
+            <li><a href="#cta">Contacto</a></li>
+            <li><a href="mailto:info@qas-digital.com">info@qas-digital.com</a></li>
+            <li><a href="https://www.qas-digital.com">www.qas-digital.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 QAS-Digital. Todos os direitos reservados.</p>
+        <p><span class="i18n-prop">Confidential &amp; Proprietary</span> — <a
+            href="mailto:info@qas-digital.com">info@qas-digital.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
