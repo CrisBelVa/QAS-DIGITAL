@@ -1588,11 +1588,12 @@ footer {
 
 @media (max-width: 768px) {
   section {
-    padding: 72px 0;
+    padding: 60px 0;
   }
 
   .nav-links,
-  .nav-cta .btn-ghost {
+  .nav-cta .btn-ghost,
+  .nav-cta .btn-primary {
     display: none;
   }
 
@@ -1600,11 +1601,65 @@ footer {
     display: flex;
   }
 
+  #hero {
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: none;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
   .unit-economics {
     padding: 24px;
+    margin-bottom: 40px;
   }
 
   .cta-box {
     padding: 48px 24px;
   }
+
+  .sticky-mobile-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    padding: 16px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .sticky-mobile-cta .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 1rem;
+    box-shadow: var(--shadow-teal);
+  }
+
+  /* Padding at bottom of body to accommodate sticky CTA */
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+.sticky-mobile-cta {
+  display: none;
 }
