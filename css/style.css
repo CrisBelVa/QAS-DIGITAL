@@ -1586,6 +1586,15 @@ footer {
   color: var(--border);
 }
 
+.nav-logo img {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
+.sticky-mobile-cta {
+  display: none;
+}
+
 @media (max-width: 768px) {
   section {
     padding: 60px 0;
@@ -1658,8 +1667,4 @@ footer {
   body {
     padding-bottom: 80px;
   }
-}
-
-.sticky-mobile-cta {
-  display: none;
 }
