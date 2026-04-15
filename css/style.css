@@ -1586,9 +1586,6 @@ footer {
   color: var(--border);
 }
 
-.nav-logo img {
-  filter: url(#white-logo-filter);
-}
 
 .sticky-mobile-cta {
   display: none;
