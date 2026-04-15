@@ -1587,8 +1587,7 @@ footer {
 }
 
 .nav-logo img {
-  filter: invert(1);
-  mix-blend-mode: screen;
+  filter: url(#white-logo-filter);
 }
 
 .sticky-mobile-cta {

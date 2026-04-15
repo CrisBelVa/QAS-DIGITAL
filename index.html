@@ -646,22 +646,7 @@
                 </svg></td>
             </tr>
             <tr>
-              <td class="feature-name">Pronto para Reporte CSRD / ESG</td>
-              <td><svg width="18" height="18" class="cross">
-                  <use href="#ic-x" />
-                </svg></td>
-              <td><svg width="18" height="18" class="partial">
-                  <use href="#ic-minus" />
-                </svg></td>
-              <td><svg width="18" height="18" class="cross">
-                  <use href="#ic-x" />
-                </svg></td>
-              <td class="highlight-col"><svg width="18" height="18" class="check">
-                  <use href="#ic-check" />
-                </svg></td>
-            </tr>
-            <tr>
-              <td class="feature-name">Custo acessível para PMEs</td>
+              <td class="feature-name">Custo-benefício para o mercado médio (PMEs)</td>
               <td><svg width="18" height="18" class="check">
                   <use href="#ic-check" />
                 </svg></td>
@@ -934,6 +919,15 @@
     <a href="https://wa.me/351912599821" class="btn btn-primary" target="_blank">Falar com o Comercial</a>
   </div>
 
+  <!-- SVG filter for white-on-transparent logo -->
+  <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
+    <filter id="white-logo-filter">
+      <feColorMatrix type="matrix" values="0 0 0 0 1
+                                           0 0 0 0 1
+                                           0 0 0 0 1
+                                           -1 -1 -1 1 0" />
+    </filter>
+  </svg>
   <script src="js/main.js"></script>
 </body>
 
