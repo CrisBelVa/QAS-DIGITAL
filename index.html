@@ -166,7 +166,14 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#hero" class="nav-logo">
-          <img src="img/logo.png" alt="QAS-Digital" style="height: 40px;">
+          <svg viewBox="0 0 884 696" width="51" height="40" style="display:block">
+            <defs>
+              <filter id="white-f" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -1 0 0 0 1" />
+              </filter>
+            </defs>
+            <image href="img/logo.png" width="884" height="696" filter="url(#white-f)" />
+          </svg>
         </a>
         <ul class="nav-links">
           <li><a href="#problem">Problema</a></li>
@@ -883,7 +890,9 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="nav-logo" style="margin-bottom:0">
-            <img src="img/logo.png" alt="QAS-Digital" style="height: 40px;">
+            <svg viewBox="0 0 884 696" width="51" height="40" style="display:block">
+              <image href="img/logo.png" width="884" height="696" filter="url(#white-f)" />
+            </svg>
           </div>
           <p>Evolução estratégica do seu sistema de gestão integrado. Qualidade. Ambiente. Segurança.</p>
         </div>
@@ -919,15 +928,6 @@
     <a href="https://wa.me/351912599821" class="btn btn-primary" target="_blank">Falar com o Comercial</a>
   </div>
 
-  <!-- SVG filter for white-on-transparent logo -->
-  <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
-    <filter id="white-logo-filter">
-      <feColorMatrix type="matrix" values="0 0 0 0 1
-                                           0 0 0 0 1
-                                           0 0 0 0 1
-                                           -1 -1 -1 1 0" />
-    </filter>
-  </svg>
   <script src="js/main.js"></script>
 </body>
 
