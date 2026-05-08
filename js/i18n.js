@@ -9,6 +9,13 @@ const T = {
         'hero.sub': 'A QAS-Digital unifica Qualidade, Ambiente e Segurança numa plataforma única e intuitiva. Substituímos o caos das planilhas por automação em tempo real, transformando conformidade em dados para decisões estratégicas.',
         'hero.title': 'Evolução Estratégica<br/>do seu <span class="gradient-text">Sistema de<br/>Gestão Integrado</span>',
         'hero.btn.demo': 'Falar com o Comercial', 'hero.btn.explore': 'Conhecer a Plataforma',
+        'hero.form.title': 'Peça uma Demo Gratuita.', 'hero.form.sub': 'Respondemos em menos de 24 horas.',
+        'hero.form.name.label': 'Nome Completo', 'hero.form.name.ph': 'O seu nome',
+        'hero.form.company.label': 'Empresa', 'hero.form.company.ph': 'Nome da empresa',
+        'hero.form.email.label': 'Email', 'hero.form.phone.label': 'Telefone / WhatsApp',
+        'hero.form.consent': 'Concordo em permitir que a QAS-Digital recolha e processe os meus dados de acordo com a <a href="mailto:info@qas-digital.com">política de privacidade</a>.',
+        'hero.form.submit': 'Pedir Demo',
+        'whatsapp.cta': 'Falar via WhatsApp',
         'hero.st1': 'Organizações Alvo (Fase 1)', 'hero.st2': 'Módulos ISO completos', 'hero.st3': 'Gross Margin', 'hero.st4': 'Janela CSRD',
         'hero.db.title': 'Dashboard QAS',
         'hero.db.m1s': 'Qualidade', 'hero.db.m2s': 'Ambiente', 'hero.db.m3s': 'Segurança',
@@ -69,6 +76,13 @@ const T = {
         'hero.title': 'Strategic Evolution<br/>of your <span class="gradient-text">Integrated<br/>Management System</span>',
         'hero.sub': 'QAS-Digital unifies Quality, Environment and Safety in a single, intuitive platform. We replace spreadsheet chaos with real-time automation, turning compliance into strategic decisions.',
         'hero.btn.demo': 'Talk to Sales', 'hero.btn.explore': 'Explore the Platform',
+        'hero.form.title': 'Request a Free Demo.', 'hero.form.sub': "We'll get back to you within 24 hours.",
+        'hero.form.name.label': 'Full Name', 'hero.form.name.ph': 'Your name',
+        'hero.form.company.label': 'Company', 'hero.form.company.ph': 'Company name',
+        'hero.form.email.label': 'Email', 'hero.form.phone.label': 'Phone / WhatsApp',
+        'hero.form.consent': 'I agree to allow QAS-Digital to collect and process my data in accordance with the <a href="mailto:info@qas-digital.com">privacy policy</a>.',
+        'hero.form.submit': 'Request Demo',
+        'whatsapp.cta': 'Chat on WhatsApp',
         'hero.st1': 'Target Organizations (Phase 1)', 'hero.st2': 'ISO modules complete', 'hero.st3': 'Gross Margin', 'hero.st4': 'CSRD deadline',
         'hero.db.title': 'QAS Dashboard',
         'hero.db.m1s': 'Quality', 'hero.db.m2s': 'Environment', 'hero.db.m3s': 'Safety',
@@ -142,7 +156,22 @@ const SMAP = [
     ['#hero h1.hero-title', 'hero.title', 'html'],
     ['#hero .hero-sub', 'hero.sub', 'text'],
     ['#hero .hero-actions .btn-primary span.i18n-btn', 'hero.btn.demo', 'text'],
-    ['#hero .hero-actions .btn-ghost', 'hero.btn.explore', 'text'],
+    ['#hero .hero-actions .btn-primary:not(:has(.i18n-btn))', 'hero.btn.explore', 'text'],
+
+    // Lead form
+    ['#hero .hero-lead-form h3', 'hero.form.title', 'text'],
+    ['#hero .hero-lead-form > p', 'hero.form.sub', 'text'],
+    ['label[for="hf-name"]', 'hero.form.name.label', 'text'],
+    ['#hf-name', 'hero.form.name.ph', 'placeholder'],
+    ['label[for="hf-company"]', 'hero.form.company.label', 'text'],
+    ['#hf-company', 'hero.form.company.ph', 'placeholder'],
+    ['label[for="hf-email"]', 'hero.form.email.label', 'text'],
+    ['label[for="hf-phone"]', 'hero.form.phone.label', 'text'],
+    ['.hlf-consent-text', 'hero.form.consent', 'html'],
+    ['.hlf-submit', 'hero.form.submit', 'text'],
+
+    // Sticky WhatsApp
+    ['.whatsapp-sticky .wa-text', 'whatsapp.cta', 'text'],
     ['#hero .db-module:nth-child(1) .db-module-status', 'hero.db.m1s', 'text'],
     ['#hero .db-module:nth-child(2) .db-module-status', 'hero.db.m2s', 'text'],
     ['#hero .db-module:nth-child(3) .db-module-status', 'hero.db.m3s', 'text'],
@@ -282,6 +311,7 @@ function setLang(lang) {
         if (v === undefined) return;
         document.querySelectorAll(sel).forEach(el => {
             if (type === 'html') el.innerHTML = v;
+            else if (type === 'placeholder') el.placeholder = v;
             else el.textContent = v;
         });
     });
