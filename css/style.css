@@ -1682,12 +1682,12 @@ footer {
   z-index: 2;
 }
 #hero .hero-container .hero-title {
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
-  line-height: 1.2;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.1;
 }
 #hero .hero-container .hero-sub {
-  font-size: 0.95rem;
-  margin-bottom: 28px;
+  font-size: 1.15rem;
+  margin-bottom: 32px;
 }
 #hero .hero-container > .hero-form-wrap {
   flex: 0 0 360px;
@@ -1762,11 +1762,27 @@ footer {
   justify-content: center;
   margin-top: 8px;
 }
-.hlf-note {
-  text-align: center;
-  font-size: 0.75rem;
+.hlf-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.72rem;
   color: var(--muted);
-  margin-top: 12px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+.hlf-checkbox input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--teal);
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+.hlf-checkbox a {
+  color: var(--teal);
+  text-decoration: underline;
 }
 
 /* ── SCREENSHOTS CAROUSEL ── */
