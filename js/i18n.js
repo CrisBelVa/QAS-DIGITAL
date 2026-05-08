@@ -155,8 +155,7 @@ const SMAP = [
     // Hero
     ['#hero h1.hero-title', 'hero.title', 'html'],
     ['#hero .hero-sub', 'hero.sub', 'text'],
-    ['#hero .hero-actions .btn-primary span.i18n-btn', 'hero.btn.demo', 'text'],
-    ['#hero .hero-actions .btn-primary:not(:has(.i18n-btn))', 'hero.btn.explore', 'text'],
+    ['#hero .hero-actions .btn-primary', 'hero.btn.explore', 'text'],
 
     // Lead form
     ['#hero .hero-lead-form h3', 'hero.form.title', 'text'],
@@ -309,11 +308,13 @@ function setLang(lang) {
     SMAP.forEach(([sel, key, type]) => {
         const v = T[lang][key];
         if (v === undefined) return;
-        document.querySelectorAll(sel).forEach(el => {
-            if (type === 'html') el.innerHTML = v;
-            else if (type === 'placeholder') el.placeholder = v;
-            else el.textContent = v;
-        });
+        try {
+            document.querySelectorAll(sel).forEach(el => {
+                if (type === 'html') el.innerHTML = v;
+                else if (type === 'placeholder') el.placeholder = v;
+                else el.textContent = v;
+            });
+        } catch (e) { /* invalid selector, skip */ }
     });
 
     document.querySelectorAll('[data-lang]').forEach(b =>
